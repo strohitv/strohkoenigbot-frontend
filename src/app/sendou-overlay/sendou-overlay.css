@@ -1,0 +1,144 @@
+a {
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.sendou-overlay {
+  margin-bottom: 0.33rem;
+  max-width: 99vw;
+}
+
+.horizontal-space-small {
+  width: 0.46rem;
+}
+
+.horizontal-space-medium {
+  width: 1.5rem;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.rounded-corners-sendou-foreground {
+  background-color: rgba(20, 15, 52, 0.9);
+  border-radius: 0 0.65rem 0.65rem 0;
+  padding: 0.33rem 0.2rem;
+}
+
+.rounded-corners-sendou-highlight {
+  background-color: rgba(169, 138, 255, 0.3);
+  border-radius: 0.65rem;
+  padding: 0.33rem 0.2rem;
+}
+
+.sendou-header {
+  background-color: rgba(20, 15, 52, 0.9);
+  border-radius: 0.65rem 0.65rem 0 0;
+  padding: 0 0.52rem;
+  max-width: fit-content;
+}
+
+.sendou-footer {
+  background-color: rgba(20, 15, 52, 0.9);
+  border-radius: 0 0 0.65rem 0.65rem;
+  padding: 0 0.52rem;
+  max-width: fit-content;
+}
+
+.bottom-margin {
+  margin-bottom: 0.33rem;
+}
+
+.rounded-corners-grey {
+  background-color: rgba(150, 150, 150, 1);
+  border-radius: 0.65rem;
+  padding: 0.2rem;
+}
+
+.seed {
+  background-color: rgba(100, 100, 100, 1);
+  padding: 0 0.3rem;
+  min-width: 0.4rem;
+}
+
+.image-medium {
+  height: 1.5rem;
+  width: 1.5rem;
+  flex-shrink: 0;
+}
+
+.image-circle {
+  clip-path: circle();
+  background-color: black;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.team-name {
+  padding: 0 0.2rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.sendou-team-name {
+  /*width: 100%;*/
+  /*flex: 1;*/
+  text-align: center;
+}
+
+.sendou-left-team {
+  padding-right: 0.5rem;
+}
+
+.sendou-right-team {
+  padding-left: 0.5rem;
+  flex-direction: row-reverse;
+}
+
+.sendou-result {
+  width: fit-content;
+  flex-shrink: 0;
+  padding: 0.1rem 0.4rem;
+}
+
+.mini-font {
+  font-size: 0.85rem;
+  line-height: 1.3rem;
+  font-weight: bold;
+  -webkit-text-stroke: 1px black;
+}
+
+.micro-font {
+  font-size: 0.7rem;
+  line-height: 1rem;
+}
+
+.horizontal-padding {
+  padding-left: 0.33rem;
+  padding-right: 0.33rem;
+}

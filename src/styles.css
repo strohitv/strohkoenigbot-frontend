@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+}
+
+body {
+  font-family: Splatoon2, Splatoon1, sans-serif, serif;
+  line-height: 1.5rem;
+  font-weight: bold;
+  -webkit-text-stroke: 1px black;
+  color: white;
+  text-align: center;
+
+  background-color: rgba(0, 0, 0, 0);
+
+  position: absolute;
+  margin: 5px !important;
+}

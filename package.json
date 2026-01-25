@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "start": "ng serve --serve-path /frontend",
+    "build": "ng build --base-href /frontend --deploy-url /frontend/",
+    "watch": "ng build --base-href /frontend --watch --configuration development",
     "test": "ng test"
   },
   "prettier": {
