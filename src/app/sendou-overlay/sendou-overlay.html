@@ -2,8 +2,8 @@
   <div class="sendou-header micro-font">
     &copy; Overlay: strohkoenig
   </div>
-  <div class="rounded-corners-sendou-foreground flex-column">
-    <!--		SendouQ-->
+  <div class="rounded-corners-sendou-foreground flex-column max-content">
+    <!--		SendouQ header -->
     <div class="full-width horizontal-padding" [hidden]="model.type !== 'SENDOU_Q'">
       <div class="flex-column rounded-corners-sendou-highlight bottom-margin">
         <div class="flex-row ">
@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-    <!--		regular Tournament-->
+    <!--		Tournament header -->
     <div class="full-width horizontal-padding" [hidden]="model.type !== 'TOURNAMENT'">
       <div class="flex-column rounded-corners-sendou-highlight bottom-margin">
         <div class="flex-row ">
@@ -27,25 +27,53 @@
           <span>{{ model.tournamentName }}</span>
           <div class="horizontal-space-small"></div>
         </div>
-        <div class="flex-row full-width mini-font">
-          <span class="flex-1">{{ model.bracketName }}</span>
-          <span class="flex-1">{{ model.roundName }}</span>
-          <span class="flex-1">{{ model.winCondition }}</span>
+        <div class="tournament-grid-container full-width mini-font">
+          <span class="no-wrap">{{ model.bracketName }}</span>
+          <div class="horizontal-space-small"></div>
+          <span class="no-wrap flex-1">{{ model.roundName }}</span>
+          <div class="horizontal-space-small"></div>
+          <span class="no-wrap">{{ model.winCondition }}</span>
         </div>
       </div>
     </div>
-    <div class="flex-row full-width bottom-margin">
-      <div class="horizontal-space-small"></div>
-      <img class="image-medium image-circle" [src]="model.ownTeamImageUrl || emptyTeamImageUrl" alt="own-team-logo"/>
-      <div class="horizontal-space-small"></div>
-      <div class="flex-row sendou-team-name sendou-left-team"><span class="seed mini-font">{{ model.ownTeamSeed }}</span><span class="team-name">{{ model.ownTeamName }}</span></div>
-<!--      <div class="horizontal-space-medium"></div>-->
-      <span class="rounded-corners-grey sendou-result">{{ model.ownScore }}:{{ model.opponentScore }}</span>
-<!--      <div class="horizontal-space-medium"></div>-->
-      <div class="flex-row sendou-team-name sendou-right-team"><span class="seed mini-font">{{ model.opponentTeamSeed }}</span><span class="team-name">{{ model.opponentTeamName }}</span></div>
-      <div class="horizontal-space-small"></div>
-      <img class="image-medium image-circle" [src]="model.opponentTeamImageUrl || emptyTeamImageUrl" alt="opponent-team-logo"/>
-      <div class="horizontal-space-small"></div>
+    <!--		team results -->
+    <div class="team-grid-container full-width">
+      <!--		own team-->
+      <div class="team-grid-cell darker-grey-background rounded-corners-up-left micro-font">
+        <div class="seed-margin">
+          ({{ model.ownTeamSeed }})
+        </div>
+      </div>
+      <div class="team-grid-cell sendou-dark-background">
+        <img class="image-medium image-circle team-image" [src]="model.ownTeamImageUrl || emptyTeamImageUrl"
+             alt="own-team-logo"/>
+      </div>
+      <div class="team-grid-cell text-left team-name sendou-dark-background">
+        {{ model.ownTeamName }}
+      </div>
+      <div class="team-grid-cell grey-background rounded-corners-up-right full-width sendou-result">
+        <div class="score-margin">
+          {{ model.ownScore }}
+        </div>
+      </div>
+      <!--		opponents -->
+      <div class="team-grid-cell darker-grey-background rounded-corners-bottom-left micro-font">
+        <div class="seed-margin">
+          ({{ model.opponentTeamSeed }})
+        </div>
+      </div>
+      <div class="team-grid-cell sendou-dark-background">
+        <img class="image-medium image-circle team-image" [src]="model.opponentTeamImageUrl || emptyTeamImageUrl"
+             alt="opponent-team-logo"/>
+      </div>
+      <div class="team-grid-cell text-left team-name sendou-dark-background">
+        {{ model.opponentTeamName }}
+      </div>
+      <div class="team-grid-cell grey-background rounded-corners-bottom-right full-width sendou-result">
+        <div class="score-margin">
+          {{ model.opponentScore }}
+        </div>
+      </div>
     </div>
   </div>
   <div class="flex-row">
