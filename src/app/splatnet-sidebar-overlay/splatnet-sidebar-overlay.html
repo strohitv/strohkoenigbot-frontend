@@ -1,0 +1,360 @@
+@if (model.type === 'STATS') {
+  <div class="rounded-corners-transparent sidebar">
+    <div class="flex-column">
+      <div class="vertical-space-mini"></div>
+      <div class="flex-column rounded-corners-colored fill-width"
+           [style.background-color]="model.team_stats?.own_team?.color ?? 'black'">
+        <p>PREVIOUS GAME</p>
+      </div>
+
+      <div class="vertical-space-small"></div>
+
+      <!-- weapon-->
+      @if (model.weapon_info) {
+        <div class="flex-column rounded-corners-bright">
+          <p>WEAPON</p>
+          <!-- image -->
+          <img class="image-max" src="{{model.weapon_info!.image}}" alt="Last Weapon"/>
+          <div class="vertical-space-small"></div>
+
+          <!-- stars -->
+          @if (0 < model.weapon_info!.stars) {
+            <div class="flex-row">
+              @if (0 < model.weapon_info!.stars && model.weapon_info!.stars < 6) {
+                <img class="image-mini" alt="Star"
+                     src="data:image/png;base64,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"/>
+
+                @for (dings of [].constructor(model.weapon_info!.stars - 1); track dings) {
+                  <div class="horizontal-space-small"></div>
+                  <img class="image-mini" alt="Star"
+                       src="data:image/png;base64,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"/>
+                }
+              } @else {
+                <img class="image-mini" alt="Star"
+                     src="data:image/png;base64,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"/>
+                <div class="horizontal-space-small"></div>
+                {{ model.weapon_info!.stars }}
+              }
+            </div>
+            <div class="vertical-space-small"></div>
+          }
+          <div class="flex-row" [hidden]="0 < model.weapon_info!.stars && model.weapon_info!.stars < 6">
+
+          </div>
+
+          @if (model.weapon_info!.exp_start_ratio !== null && model.weapon_info!.exp_change_ratio !== null && model.weapon_info!.exp_left_ratio !== null) {
+            <div class="flex-row weapon-width">
+              <span class="progress-bar already-owned-exp" [style.width.%]="model.weapon_info!.exp_start_ratio"></span>
+              <span class="progress-bar earned-exp-stream" [style.width.%]="model.weapon_info!.exp_change_ratio"></span>
+              <span class="progress-bar remaining-exp" [style.width.%]="model.weapon_info!.exp_left_ratio"></span>
+            </div>
+
+            <div class="vertical-space-small"></div>
+          }
+
+          <!-- sub / special image -->
+          <div class="flex-row">
+            <img class="image-medium rounded-corners-black" src="{{model.weapon_info!.sub_weapon_image}}"
+                 alt="Sub Weapon"/>
+            <div class="horizontal-space-medium"></div>
+            <img class="image-medium rounded-corners-black" src="{{model.weapon_info!.special_weapon_image}}"
+                 alt="Special Weapon"/>
+          </div>
+
+          <!-- wins -->
+          <div>
+            <span class="small-font">{{ model.weapon_info!.wins }} wins</span>
+          </div>
+        </div>
+
+        <div class="vertical-space-small"></div>
+      }
+
+      <!-- gear abilities -->
+      @if (model.abilities_info) {
+        <div class="flex-row">
+          <div>
+            <div class="flex-column">
+              <div class="flex-column rounded-corners-bright fill-width">
+                <p>ABILITIES</p>
+                <div class="flex-row">
+                  <img class="image-medium black-circle" src="{{model.abilities_info!.head.main_image}}"
+                       alt="Head Main Ability"/>
+
+                  <div class="horizontal-space-mini"></div>
+
+                  <div class="flex-row">
+                    <img class="image-small black-circle" src="{{model.abilities_info!.head.sub_1_image}}"
+                         alt="Head Sub Ability 1"/>
+                    <div class="vertical-space-small"
+                         [hidden]="model.abilities_info!.head.sub_2_image === null"></div>
+                    <img class="image-small black-circle"
+                         [hidden]="model.abilities_info!.head.sub_2_image === null"
+                         src="{{model.abilities_info!.head.sub_2_image}}" alt="Head Sub Ability 2"/>
+                    <div class="vertical-space-small"
+                         [hidden]="model.abilities_info!.head.sub_3_image === null"></div>
+                    <img class="image-small black-circle"
+                         [hidden]="model.abilities_info!.head.sub_3_image === null"
+                         src="{{model.abilities_info!.head.sub_3_image}}" alt="Head Sub Ability 3"/>
+                  </div>
+                </div>
+
+                <div class="vertical-space-small"></div>
+
+                <div class="flex-row">
+                  <img class="image-medium black-circle" src="{{model.abilities_info!.shirt.main_image}}"
+                       alt="Shirt Main Ability"/>
+
+                  <div class="horizontal-space-mini"></div>
+
+                  <div class="flex-row">
+                    <img class="image-small black-circle" src="{{model.abilities_info!.shirt.sub_1_image}}"
+                         alt="Shirt Sub Ability 1"/>
+                    <div class="vertical-space-small"
+                         [hidden]="model.abilities_info!.shirt.sub_2_image === null"></div>
+                    <img class="image-small black-circle"
+                         [hidden]="model.abilities_info!.shirt.sub_2_image === null"
+                         src="{{model.abilities_info!.shirt.sub_2_image}}" alt="Shirt Sub Ability 2"/>
+                    <div class="vertical-space-small"
+                         [hidden]="model.abilities_info!.shirt.sub_3_image === null"></div>
+                    <img class="image-small black-circle"
+                         [hidden]="model.abilities_info!.shirt.sub_3_image === null"
+                         src="{{model.abilities_info!.shirt.sub_3_image}}" alt="Shirt Sub Ability 3"/>
+                  </div>
+                </div>
+
+                <div class="vertical-space-small"></div>
+
+                <div class="flex-row">
+                  <img class="image-medium black-circle" src="{{model.abilities_info!.shoes.main_image}}"
+                       alt="Shoes Main Ability"/>
+
+                  <div class="horizontal-space-mini"></div>
+
+                  <div class="flex-row">
+                    <img class="image-small black-circle" src="{{model.abilities_info!.shoes.sub_1_image}}"
+                         alt="Shoes Sub Ability 1"/>
+                    <div class="vertical-space-small"
+                         [hidden]="model.abilities_info!.shoes.sub_2_image === null"></div>
+                    <img class="image-small black-circle"
+                         [hidden]="model.abilities_info!.shoes.sub_2_image === null"
+                         src="{{model.abilities_info!.shoes.sub_2_image}}" alt="Shoes Sub Ability 2"/>
+                    <div class="vertical-space-small"
+                         [hidden]="model.abilities_info!.shoes.sub_3_image === null"></div>
+                    <img class="image-small black-circle"
+                         [hidden]="model.abilities_info!.shoes.sub_3_image === null"
+                         src="{{model.abilities_info!.shoes.sub_3_image}}" alt="Shoes Sub Ability 3"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vertical-space-small"></div>
+      }
+
+      <!-- stats -->
+      <!-- navigation -->
+      <div>
+        <div class="flex-column">
+          <div class="vertical-space-small"></div>
+          <div class="flex-row">
+            <div class="image-mini navigator active-navigator"></div>
+            @for (dings of [].constructor(numberOfTabs - 1); track dings) {
+              <div class="horizontal-space-small"></div>
+              <div class="image-mini navigator"></div>
+            }
+          </div>
+          <div class="vertical-space-small"></div>
+        </div>
+
+        <!-- match result -->
+        @if (model.team_stats) {
+          <div class="tab stats-min-height">
+            <div class="flex-column rounded-corners-bright body-sized fill-width">
+              <p>RESULT</p>
+
+              <div class="vertical-space-small"></div>
+
+              <div class="flex-row weapon-width">
+                <span class="progress-bar" [style.width.%]="model.team_stats!.own_team.result_ratio"
+                      [style.background-color]="model.team_stats.own_team.color"></span>
+                <span class="progress-bar" [style.width.%]="model.team_stats!.opp_1.result_ratio"
+                      [style.background-color]="model.team_stats.opp_1.color"></span>
+                @if (model.team_stats!.opp_2) {
+                  <span class="progress-bar" [style.width.%]="model.team_stats!.opp_2!.result_ratio"
+                        [style.background-color]="model.team_stats.opp_2!.color"></span>
+                }
+              </div>
+              <div class="vertical-space-small"></div>
+
+              <div>
+                <p class="small-font">
+                  <span
+                    [class]="model.team_stats.own_team.result === 'WIN' ? 'green' : model.team_stats.own_team.result === 'LOSE' ? 'red' : ''">Own</span>:
+                  <span
+                    [style.color]="model.team_stats.own_team.color">{{ model.team_stats!.own_team.result_points }}</span>
+                </p>
+                <p class="small-font">
+                  <span
+                    [class]="model.team_stats.opp_1.result === 'WIN' ? 'green' : model.team_stats.opp_1.result === 'LOSE' ? 'red' : ''">Opp<span
+                    [hidden]="model.team_stats!.opp_2 === null">1</span></span>:
+                  <span
+                    [style.color]="model.team_stats.opp_1.color">{{ model.team_stats!.opp_1.result_points }}</span>
+                </p>
+                @if (model.team_stats!.opp_2) {
+                  <p class="small-font">
+                    <span
+                      [class]="model.team_stats.opp_2.result === 'WIN' ? 'green' : model.team_stats.opp_2.result === 'LOSE' ? 'red' : ''">Opp2</span>:
+                    <span
+                      [style.color]="model.team_stats.opp_2.color">{{ model.team_stats!.opp_2.result_points }}</span>
+                  </p>
+                }
+              </div>
+            </div>
+          </div>
+        }
+
+        <!-- weapon exp -->
+        @if (model.weapon_info) {
+          <div class="tab stats-min-height">
+            <div class="flex-column rounded-corners-bright body-sized fill-width">
+              <p>WEAPON EXP</p>
+
+              <div class="vertical-space-small"></div>
+
+              @if (model.weapon_info!.exp_start_ratio !== null && model.weapon_info!.exp_change_ratio !== null && model.weapon_info!.exp_left_ratio !== null) {
+                <div class="flex-row weapon-width">
+                <span class="progress-bar already-owned-exp"
+                      [style.width.%]="model.weapon_info!.exp_start_ratio"></span>
+                  <span class="progress-bar earned-exp-stream"
+                        [style.width.%]="model.weapon_info!.exp_change_ratio"></span>
+                  <span class="progress-bar remaining-exp" [style.width.%]="model.weapon_info!.exp_left_ratio"></span>
+                </div>
+
+                <div class="vertical-space-small"></div>
+              }
+
+              @if (model.weapon_info!.exp_start !== null && model.weapon_info!.exp_change !== null && model.weapon_info!.exp_now !== null) {
+                <div>
+                  <p class="small-font yellow">
+                    {{ model.weapon_info!.exp_start }}
+                  </p>
+                  @if (model.weapon_info!.exp_change) {
+                    <p class="small-font aqua">
+                      + {{ model.weapon_info!.exp_change }}
+                    </p>
+                  }
+                  @if (model.weapon_info!.exp_change && model.weapon_info!.exp_change > 0) {
+                    <p class="small-font">
+                      = {{ model.weapon_info!.exp_now }}
+                    </p>
+                  }
+                </div>
+              }
+            </div>
+          </div>
+        }
+
+        <!-- wins, defeats -->
+        @if (model.stream_stats) {
+          <div class="tab stats-min-height">
+            <div class="flex-column rounded-corners-bright body-sized fill-width">
+              <p>STREAM</p>
+              <p>
+                <span class="green">{{ model.stream_stats!.wins }}</span> w - <span
+                class="red">{{ model.stream_stats!.defeats }}</span> d
+              </p>
+              <div class="vertical-space-small"></div>
+
+              <div class="flex-row weapon-width">
+                <span class="progress-bar green-background" [style.width.%]="model.stream_stats!.win_ratio"></span>
+                <span class="progress-bar red-background" [style.width.%]="model.stream_stats!.defeat_ratio"></span>
+              </div>
+
+              <div class="vertical-space-medium"></div>
+            </div>
+          </div>
+        }
+
+        <!-- game stats -->
+        @if (model.game_stats) {
+          <div class="tab stats-min-height">
+            <div class="flex-column rounded-corners-bright body-sized fill-width">
+              <p>MATCH</p>
+              <p>
+                <span>{{ model.game_stats!.kills }}</span> k - <span>{{ model.game_stats!.assists }}</span>
+                a
+              </p>
+              <p>
+                <span>{{ model.game_stats!.deaths }}</span> d - <span>{{ model.game_stats!.specials }}</span> s
+              </p>
+              <p>
+                {{ model.game_stats!.paint }} p
+              </p>
+            </div>
+          </div>
+        }
+
+        <!-- special badge stats -->
+        @if (model.special_stats) {
+          <div class="tab stats-min-height">
+            <div class="rounded-corners-bright body-sized fill-width">
+              <p>SPECIAL</p>
+              <div class="flex-row">
+                <img class="image-medium rounded-corners-black" src="{{model.special_stats!.image}}"
+                     alt="Special Badge"/>
+                <div class="horizontal-space-small"></div>
+                <p>
+                  {{ model.special_stats!.wins }} w
+                </p>
+              </div>
+              @if (model.special_stats!.gained) {
+                <div>
+                  <p>(<span class="green">+ {{ model.special_stats!.gained }}</span>)</p>
+                </div>
+              }
+            </div>
+          </div>
+        }
+
+        <!-- power stats-->
+        @if (model.power_stats) {
+          <div class="tab stats-min-height">
+            <div class="rounded-corners-bright body-sized fill-width">
+              <div class="vertical-space-mini"></div>
+
+              <div class="flex-column">
+                <div class="flex-row">
+                  <img class="image-medium rounded-corners-black"
+                       src="{{model.power_stats.mode_image}}"
+                       alt="Mode">
+                  <div class="horizontal-space-small"></div>
+                  <img class="image-medium rounded-corners-black"
+                       src="{{model.power_stats.rule_image}}"
+                       alt="Rule">
+                </div>
+                <p>
+                  {{ model.power_stats.power_current !== null ? model.power_stats.power_current.toFixed(1) : '-' }}
+                </p>
+                @if (model.power_stats.power_change) {
+                  <p>
+                    (<span
+                    [class]="model.power_stats.power_change > 0 ? 'green' : model.power_stats.power_change < 0 ? 'red' : ''">{{ model.power_stats.power_change > 0 ? '+' : model.power_stats.power_change < 0 ? '-' : '' }} {{ Math.abs(model.power_stats.power_change).toFixed(1) }}</span>)
+                  </p>
+                }
+                @if (model.power_stats.power_max) {
+                  <p>
+                    {{ model.power_stats.power_max.toFixed(1) }} max
+                  </p>
+                }
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="vertical-space-mini"></div>
+  </div>
+}

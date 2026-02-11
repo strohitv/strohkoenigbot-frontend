@@ -46,7 +46,7 @@ export class SendouOverlay implements OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    this.subscription?.unsubscribe();
   }
 
   private createGetRequestLink(): string {
