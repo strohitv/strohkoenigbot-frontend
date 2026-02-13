@@ -155,23 +155,23 @@
 
       <!-- stats -->
       <!-- navigation -->
-      <div>
+      <div class="rounded-corners-bright">
         <div class="flex-column">
-          <div class="vertical-space-small"></div>
+          <!-- <div class="vertical-space-small"></div> -->
           <div class="flex-row">
             <div class="image-mini navigator active-navigator"></div>
             @for (dings of [].constructor(numberOfTabs - 1); track dings) {
-              <div class="horizontal-space-small"></div>
+              <div class="horizontal-space-mini"></div>
               <div class="image-mini navigator"></div>
             }
           </div>
-          <div class="vertical-space-small"></div>
+          <div class="vertical-space-medium"></div>
         </div>
 
         <!-- match result -->
         @if (model.team_stats) {
           <div class="tab stats-min-height">
-            <div class="flex-column rounded-corners-bright body-sized fill-width">
+            <div class="flex-column body-sized fill-width">
               <p>RESULT</p>
 
               <div class="vertical-space-small"></div>
