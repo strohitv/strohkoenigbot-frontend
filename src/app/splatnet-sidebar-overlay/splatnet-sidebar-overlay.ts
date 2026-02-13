@@ -23,7 +23,7 @@ export class SplatnetSidebarOverlay implements OnDestroy, OnChanges {
   private currentActiveTab = 0;
 
   constructor(private cdr: ChangeDetectorRef, private http: HttpClient) {
-    const requestLink = 'http://localhost:8080/api/v1/stream-stats';
+    const requestLink = '/api/v1/stream-stats';
 
     this.http
       .get<StreamData>(requestLink)
