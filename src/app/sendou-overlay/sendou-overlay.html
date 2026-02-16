@@ -21,9 +21,11 @@
       <div class="flex-column rounded-corners-sendou-highlight bottom-margin">
         <div class="flex-row ">
           <div class="horizontal-space-small"></div>
-          <img class="image-medium image-circle" [src]="model.tournamentImageUrl || emptyTeamImageUrl"
-               alt="tournament-logo"/>
-          <div class="horizontal-space-small"></div>
+          <div [hidden]="!model.tournamentImageUrl">
+            <img class="image-medium image-circle" [src]="model.tournamentImageUrl || emptyTeamImageUrl"
+                 alt="tournament-logo"/>
+            <div class="horizontal-space-small"></div>
+          </div>
           <span>{{ model.tournamentName }}</span>
           <div class="horizontal-space-small"></div>
         </div>
@@ -37,19 +39,21 @@
       </div>
     </div>
     <!--		team results -->
-    <div class="team-grid-container full-width">
+    <div
+      [class]="'full-width ' + (model.ownTeamImageUrl || model.opponentTeamImageUrl ? 'team-grid-container-4' : 'team-grid-container-3')">
       <!--		own team-->
       <div class="team-grid-cell darker-grey-background rounded-corners-up-left micro-font">
         <div class="seed-margin">
           ({{ model.ownTeamSeed }})
         </div>
       </div>
-      <div class="team-grid-cell sendou-dark-background">
+      <div class="team-grid-cell sendou-dark-background"
+           [hidden]="!model.ownTeamImageUrl && !model.opponentTeamImageUrl">
         <img class="image-medium image-circle team-image" [src]="model.ownTeamImageUrl || emptyTeamImageUrl"
              alt="own-team-logo"/>
       </div>
-      <div class="team-grid-cell text-left team-name sendou-dark-background">
-        {{ model.ownTeamName }}
+      <div class="team-grid-cell text-left sendou-dark-background">
+        <span class="team-name">{{ model.ownTeamName }} (us)</span>
       </div>
       <div class="team-grid-cell grey-background rounded-corners-up-right full-width sendou-result">
         <div class="score-margin">
@@ -62,12 +66,13 @@
           ({{ model.opponentTeamSeed }})
         </div>
       </div>
-      <div class="team-grid-cell sendou-dark-background">
+      <div class="team-grid-cell sendou-dark-background"
+           [hidden]="!model.ownTeamImageUrl && !model.opponentTeamImageUrl">
         <img class="image-medium image-circle team-image" [src]="model.opponentTeamImageUrl || emptyTeamImageUrl"
              alt="opponent-team-logo"/>
       </div>
-      <div class="team-grid-cell text-left team-name sendou-dark-background">
-        {{ model.opponentTeamName }}
+      <div class="team-grid-cell text-left sendou-dark-background">
+        <span class="team-name">{{ model.opponentTeamName }}</span>
       </div>
       <div class="team-grid-cell grey-background rounded-corners-bottom-right full-width sendou-result">
         <div class="score-margin">
@@ -77,8 +82,30 @@
     </div>
   </div>
   <div class="flex-row">
-    <div class="sendou-footer micro-font yellow">
-      <a class="yellow" [href]="model.matchUrl">{{ model.matchUrl }}</a>
+    <div class="flex-column-left">
+      <div [class]="'tab micro-font yellow ' + (matchUrlMode === 'URL' ? 'sendou-footer' : 'sendou-footer-middle')"
+           [hidden]="!model.matchUrl || (matchUrlMode !== 'URL' && matchUrlMode !== 'BOTH')">
+        <a class="yellow" [href]="model.matchUrl">{{ model.matchUrl }}</a>
+      </div>
+      <div class="sendou-footer" [hidden]="!model.matchUrl || (matchUrlMode !== 'QR' && matchUrlMode !== 'BOTH')">
+        <div class="flex-column">
+          <p class="mini-font bottom-margin-small" [hidden]="matchUrlMode !== 'QR'">Match on sendou:</p>
+          <qrcode
+            [qrdata]="model.matchUrl ?? ''"
+            [allowEmptyString]="true"
+            [colorDark]="'#000000ff'"
+            [colorLight]="'#ffffffff'"
+            [elementType]="'canvas'"
+            [errorCorrectionLevel]="'M'"
+            class="sendou-dark-background"
+            [imageHeight]="180"
+            [imageWidth]="180"
+            [margin]="0"
+            [title]="'A custom title attribute'"
+            [width]="180"
+          ></qrcode>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -1,18 +1,23 @@
-import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+import {afterEveryRender, ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
 import {interval, Subscription} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {TournamentMatch} from '../models/tournament-match';
+import {QRCodeComponent} from 'angularx-qrcode';
 
 @Component({
   selector: 'app-sendou-overlay',
   templateUrl: './sendou-overlay.html',
   styleUrl: './sendou-overlay.css',
+  imports: [
+    QRCodeComponent
+  ]
 })
 export class SendouOverlay implements OnDestroy {
-  protected emptyTeamImageUrl: string = 'https://sendou.ink/static-assets/img/abilities/UNKNOWN.avif'
+  protected emptyTeamImageUrl: string = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=)'
 
   protected model: TournamentMatch = new TournamentMatch();
+  protected matchUrlMode: 'NONE' | 'QR' | 'URL' | 'BOTH' = 'QR';
 
   private subscription: Subscription;
 
@@ -23,6 +28,19 @@ export class SendouOverlay implements OnDestroy {
     this.route.queryParams.subscribe(params => {
       this.sendouUserId = params['suid'] ?? '6238';
       this.tournamentId = params['toid'] ?? '2978';
+
+      if (params['url']) {
+        if (params['url'].toUpperCase() === 'NONE') {
+          console.log(params['url']);
+          this.matchUrlMode = 'NONE';
+        } else if (params['url'].toUpperCase() === 'URL') {
+          console.log(params['url']);
+          this.matchUrlMode = 'URL';
+        } else if (params['url'].toUpperCase() === 'BOTH') {
+          console.log(params['url']);
+          this.matchUrlMode = 'BOTH';
+        }
+      }
     });
 
     this.http
