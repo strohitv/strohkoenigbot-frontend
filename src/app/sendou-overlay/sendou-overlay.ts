@@ -1,4 +1,4 @@
-import {afterEveryRender, ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
 import {interval, Subscription} from 'rxjs';
 import {ActivatedRoute} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
@@ -21,12 +21,12 @@ export class SendouOverlay implements OnDestroy {
 
   private subscription: Subscription;
 
-  private sendouUserId: string;
+  private sendouUser: string;
   private tournamentId: string;
 
   constructor(private cdr: ChangeDetectorRef, private route: ActivatedRoute, private http: HttpClient) {
     this.route.queryParams.subscribe(params => {
-      this.sendouUserId = params['suid'] ?? '6238';
+      this.sendouUser = params['user'] ?? 'strohkoenig';
       this.tournamentId = params['toid'] ?? '2978';
 
       if (params['url']) {
@@ -68,6 +68,6 @@ export class SendouOverlay implements OnDestroy {
   }
 
   private createGetRequestLink(): string {
-    return `/api/v1/sendou/match/search?tournament_id=${this.tournamentId}&user_id=${this.sendouUserId}`;
+    return `/api/v1/sendou/match/search?tournament_id=${this.tournamentId}&user=${this.sendouUser}`;
   }
 }
