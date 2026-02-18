@@ -218,7 +218,7 @@
         <!-- weapon exp -->
         @if (model.weapon_info) {
           <div class="stats-tab stats-min-height">
-            <div class="flex-column rounded-corners-bright body-sized fill-width">
+            <div class="flex-column body-sized fill-width">
               <p>WEAPON EXP</p>
 
               <div class="vertical-space-small"></div>
@@ -259,7 +259,7 @@
         <!-- wins, defeats -->
         @if (model.stream_stats) {
           <div class="stats-tab stats-min-height">
-            <div class="flex-column rounded-corners-bright body-sized fill-width">
+            <div class="flex-column body-sized fill-width">
               <p>STREAM</p>
               <p>
                 <span class="green">{{ model.stream_stats!.wins }}</span> w - <span
@@ -280,7 +280,7 @@
         <!-- game stats -->
         @if (model.game_stats) {
           <div class="stats-tab stats-min-height">
-            <div class="flex-column rounded-corners-bright body-sized fill-width">
+            <div class="flex-column body-sized fill-width">
               <p>MATCH</p>
               <p>
                 <span>{{ model.game_stats!.kills }}</span> k - <span>{{ model.game_stats!.assists }}</span>
@@ -299,7 +299,7 @@
         <!-- special badge stats -->
         @if (model.special_stats) {
           <div class="stats-tab stats-min-height">
-            <div class="rounded-corners-bright body-sized fill-width">
+            <div class="body-sized fill-width">
               <p>SPECIAL</p>
               <div class="flex-row">
                 <img class="image-medium rounded-corners-black" src="{{model.special_stats!.image}}"
@@ -321,7 +321,7 @@
         <!-- power stats-->
         @if (model.power_stats) {
           <div class="stats-tab stats-min-height">
-            <div class="rounded-corners-bright body-sized fill-width">
+            <div class="body-sized fill-width">
               <div class="vertical-space-mini"></div>
 
               <div class="flex-column">
