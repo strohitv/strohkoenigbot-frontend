@@ -57,7 +57,7 @@ export class SplatnetSidebarOverlay implements OnDestroy, OnChanges {
       read: () => {
         this.switchTabSubscription?.unsubscribe();
 
-        const allTabs = document.getElementsByClassName('tab');
+        const allTabs = document.getElementsByClassName('stats-tab');
         this.currentActiveTab = 0;
         for (let tab of allTabs) {
           tab.classList.add('hidden')
@@ -75,7 +75,7 @@ export class SplatnetSidebarOverlay implements OnDestroy, OnChanges {
         }
 
         this.switchTabSubscription = interval(7_500).subscribe(_ => {
-          const allTabs = document.getElementsByClassName('tab');
+          const allTabs = document.getElementsByClassName('stats-tab');
           this.currentActiveTab = ((this.currentActiveTab + 1) % allTabs.length);
 
           for (let tab of allTabs) {

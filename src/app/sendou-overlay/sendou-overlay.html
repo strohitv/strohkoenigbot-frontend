@@ -83,7 +83,7 @@
   </div>
   <div class="flex-row">
     <div class="flex-column-left">
-      <div [class]="'tab micro-font yellow ' + (matchUrlMode === 'URL' ? 'sendou-footer' : 'sendou-footer-middle')"
+      <div [class]="'micro-font yellow ' + (matchUrlMode === 'URL' ? 'sendou-footer' : 'sendou-footer-middle')"
            [hidden]="!model.matchUrl || (matchUrlMode !== 'URL' && matchUrlMode !== 'BOTH')">
         <a class="yellow" [href]="model.matchUrl">{{ model.matchUrl }}</a>
       </div>
