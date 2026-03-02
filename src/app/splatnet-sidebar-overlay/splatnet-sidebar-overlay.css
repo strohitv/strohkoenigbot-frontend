@@ -285,14 +285,12 @@
   font-size: 21px;
   line-height: 32px;
   font-weight: bold;
-  -webkit-text-stroke: 1px black;
 }
 
 .mini-font {
   font-size: 18px;
   line-height: 26px;
   font-weight: bold;
-  -webkit-text-stroke: 1px black;
 }
 
 .micro-font {
