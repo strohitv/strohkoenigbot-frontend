@@ -1,0 +1,304 @@
+.body {
+  left: 0.2vw;
+  top: 0.2vh;
+
+  width: 97.3vw;
+  height: 95.8vh;
+
+  overflow: hidden;
+}
+
+.green {
+  color: rgb(136, 255, 136);
+}
+
+.red {
+  color: rgb(255, 136, 136);
+}
+
+.horizontal-space-mini {
+  width: 0.23rem;
+}
+
+.horizontal-space-small {
+  width: 0.46rem;
+}
+
+.vertical-space-mini {
+  height: 0.23rem;
+}
+
+.vertical-space-small {
+  height: 0.46rem;
+}
+
+.rounded-corners-transparent {
+  padding: 0.5rem 1rem;
+}
+
+.rounded-corners-bright {
+  background-color: rgba(187, 187, 187, 0.65);
+  border-radius: 10px;
+  padding: 0.3rem;
+  margin: 0.3rem;
+}
+
+.rounded-corners {
+  border-radius: 1rem;
+  padding: 0.3rem;
+  margin: 0.3rem;
+  width: min-content;
+}
+
+.rounded-corners-black {
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  margin: 0.3rem;
+}
+
+.rounded-corners-black-transparent {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  margin: 0.3rem;
+}
+
+.image-stretched {
+  background-size: 100% auto;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.fill-min-width {
+  min-width: 100%;
+}
+
+.fill-height {
+  height: 100%;
+}
+
+.fill-width {
+  width: 100%;
+}
+
+.small-margin {
+  margin: 0.3rem;
+}
+
+.header-cell {
+  background-color: black;
+}
+
+.image-mini {
+  height: 1rem;
+  width: 1rem;
+}
+
+.image-below-medium {
+  height: 1.2rem;
+  width: 1.2rem;
+  padding: 0.1rem;
+}
+
+.image-medium {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0.1rem;
+}
+
+.image-big {
+  height: 6rem;
+  width: 6rem;
+}
+
+.image-medium-only-height {
+  height: 1.5rem;
+  width: 0;
+  padding: 0.1rem;
+  border: 2px solid transparent;
+}
+
+.black-circle {
+  background-color: black;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.black-rounded {
+  background-color: black;
+  border-radius: 0.5rem;
+  border: 2px solid white;
+}
+
+.progress-bar {
+  margin-right: 0;
+  margin-left: 0;
+  display: inline-block;
+  height: 14px;
+}
+
+.already-owned-exp {
+  background-color: yellow;
+}
+
+.earned-exp-stream {
+  background-color: aqua;
+}
+
+.remaining-exp {
+  background-color: darkgray;
+}
+
+.weapon-progress-bar {
+  max-width: 6.6rem;
+}
+
+.align-center {
+  display: flex;
+  height: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.forced-height {
+  height: 1.5rem;
+}
+
+.padding {
+  padding: 0.5rem;
+}
+
+.table {
+  display: table;
+  border-spacing: 0.2rem;
+  table-layout: fixed;
+}
+
+.sub-table {
+  display: table;
+  table-layout: fixed;
+}
+
+.border-top {
+  border-top: white solid 1px;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.table-caption {
+  display: table-caption;
+  text-align: center;
+  caption-side: top;
+}
+
+.underlined {
+  border-bottom: 0.2rem solid black;
+}
+
+.underlined-transparent {
+  border-bottom: 0.2rem solid rgba(0, 0, 0, 0.5);
+}
+
+.table-group {
+  display: table-row-group;
+}
+
+.table-header-3 {
+  column-span: 3;
+}
+
+.column-count-3 {
+  column-count: 3;
+}
+
+.names {
+  min-width: 8rem;
+}
+
+.stats {
+  min-width: 18rem;
+}
+
+.seen {
+  min-width: 4rem;
+}
+
+.no-model-placeholder {
+  position: absolute;
+  left: 2vw;
+  top: 2vh;
+
+  height: 91vh;
+  width: 93.6vw;
+}
+
+.no-model-flex-column {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.giant-font {
+  font-size: 4rem;
+  line-height: 5rem;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-grid-container-2 {
+  display: grid;
+  grid-template-columns: min-content auto;
+  width: 100%;
+}
+
+.main-grid-cell {
+  width: 100%;
+  vertical-align: middle;
+  line-height: 1.5rem;
+}
+
+.gear-grid-container-4 {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  width: fit-content;
+}
+
+.gear-grid-container-5 {
+  display: grid;
+  grid-template-columns: min-content min-content min-content min-content auto;
+}
+
+.grid-span-2 {
+  grid-column: 1 / span 2;
+}
+
+.grid-span-4 {
+  grid-column: 1 / span 4;
+}
+
+.grid-span-5 {
+  grid-column: 1 / span 5;
+}
