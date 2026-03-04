@@ -193,17 +193,20 @@
                         <div class="table-group">
                           <div class="table-row">
                             <div class="table-cell no-wrap">
-                              {{ statKeyValue?.win_defeat_rate?.wins ?? 0 }} @if (statKeyValue?.win_defeat_rate?.wins_gained ?? 0) {
-                              <span> (<span class="green">+ {{ statKeyValue?.win_defeat_rate?.wins_gained ?? 0 }}</span>)</span>
-                            }
+                              {{ statKeyValue?.win_defeat_rate?.wins ?? 0 }}
+                              @if (statKeyValue?.win_defeat_rate?.wins_gained ?? 0) {
+                                <span class="mini-font"> (<span
+                                  class="green">+ {{ statKeyValue?.win_defeat_rate?.wins_gained ?? 0 }}</span>)</span>
+                              }
                             </div>
                           </div>
                           <div class="table-row">
                             <div class="table-cell no-wrap">
-                              {{ statKeyValue?.win_defeat_rate?.defeats ?? 0 }} @if (statKeyValue?.win_defeat_rate?.defeats_gained ?? 0) {
-                              <span> (<span
-                                class="green">+ {{ statKeyValue?.win_defeat_rate?.defeats_gained ?? 0 }}</span>)</span>
-                            }
+                              {{ statKeyValue?.win_defeat_rate?.defeats ?? 0 }}
+                              @if (statKeyValue?.win_defeat_rate?.defeats_gained ?? 0) {
+                                <span class="mini-font"> (<span
+                                  class="green">+ {{ statKeyValue?.win_defeat_rate?.defeats_gained ?? 0 }}</span>)</span>
+                              }
                             </div>
                           </div>
                           <div class="table-row">
@@ -484,16 +487,18 @@
                         <div class="table-group">
                           <div class="table-row">
                             <div class="table-cell no-wrap">
-                              {{ statKeyValue.win_defeat_rate.wins }} @if (statKeyValue.win_defeat_rate.wins_gained) {
-                              <span> (<span
+                              {{ statKeyValue.win_defeat_rate.wins }}
+                              @if (statKeyValue.win_defeat_rate.wins_gained) {
+                              <span class="mini-font"> (<span
                                 class="green">+ {{ statKeyValue.win_defeat_rate.wins_gained }}</span>)</span>
                             }
                             </div>
                           </div>
                           <div class="table-row">
                             <div class="table-cell no-wrap">
-                              {{ statKeyValue.win_defeat_rate.defeats }} @if (statKeyValue.win_defeat_rate.defeats_gained) {
-                              <span> (<span
+                              {{ statKeyValue.win_defeat_rate.defeats }}
+                              @if (statKeyValue.win_defeat_rate.defeats_gained) {
+                              <span class="mini-font"> (<span
                                 class="green">+ {{ statKeyValue.win_defeat_rate.defeats_gained }}</span>)</span>
                             }
                             </div>

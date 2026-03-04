@@ -271,6 +271,11 @@
   margin: auto;
 }
 
+.mini-font {
+  font-size: 0.7rem;
+  line-height: 0.8rem;
+}
+
 .giant-font {
   font-size: 4rem;
   line-height: 5rem;
