@@ -41,7 +41,7 @@
 
               <p>{{ model.weapon!.exp_now }} exp</p>
               @if (model.weapon!.exp_change ?? 0 > 0) {
-                <p>(<span class="aqua">+ {{ model.weapon!.exp_change }}</span>)</p>
+                <p>(<span class="aqua">+{{ model.weapon!.exp_change }}</span>)</p>
               }
             }
 
@@ -196,7 +196,7 @@
                               {{ statKeyValue?.win_defeat_rate?.wins ?? 0 }}
                               @if (statKeyValue?.win_defeat_rate?.wins_gained ?? 0) {
                                 <span class="mini-font"> (<span
-                                  class="green">+ {{ statKeyValue?.win_defeat_rate?.wins_gained ?? 0 }}</span>)</span>
+                                  class="green">+{{ statKeyValue?.win_defeat_rate?.wins_gained ?? 0 }}</span>)</span>
                               }
                             </div>
                           </div>
@@ -205,7 +205,7 @@
                               {{ statKeyValue?.win_defeat_rate?.defeats ?? 0 }}
                               @if (statKeyValue?.win_defeat_rate?.defeats_gained ?? 0) {
                                 <span class="mini-font"> (<span
-                                  class="green">+ {{ statKeyValue?.win_defeat_rate?.defeats_gained ?? 0 }}</span>)</span>
+                                  class="red">+{{ statKeyValue?.win_defeat_rate?.defeats_gained ?? 0 }}</span>)</span>
                               }
                             </div>
                           </div>
@@ -257,7 +257,7 @@
                   </div>
                   <div class="table-cell">
                     @if (model.general!.special_wins_gained) {
-                      <p>(<span class="green">+ {{ model.general!.special_wins_gained }}</span>)</p>
+                      <p>(<span class="green">+{{ model.general!.special_wins_gained }}</span>)</p>
                     } @else {
                       <p></p>
                     }
@@ -432,7 +432,7 @@
                           <div class="table-cell">
                             <div class="align-center">
                               <div class="image-medium-only-height"></div>
-                              {{ (!player.is_myself) ? player.number_of_games + 'x' : '-' }}
+                              {{ (!player.is_myself && player.number_of_games) ? player.number_of_games + 'x' : '-' }}
                             </div>
                           </div>
                         </div>
@@ -449,18 +449,24 @@
       <!--  Map Stats-->
       <div class="main-grid-cell fill-width">
         <div class="rounded-corners-black full-width">
-          <p>Last game finished at {{ model.last_game_end_time! | date:'HH:mm' }}</p>
+          <div><p>Last game finished at {{ model.last_game_end_time! | date:'HH:mm' }}</p><img
+            class="image-mini" [src]="model.game?.modeIcon" alt="mode icon"/> {{ model.game?.mode }} -
+            <img class="image-mini" [src]="model.game?.ruleIcon"
+                 alt="rule icon"/> {{ model.game?.rule }} - {{ model.game?.stage }}
+          </div>
         </div>
         @for (stageStats of model.map_stats; track stageStats) {
           <div class="rounded-corners-bright image-stretched"
                [style.background-image]="'url(\'' + stageStats.image + '\')'">
             <div class="rounded-corners-bright">
               <div class="table fill-width">
-                <div class="table-caption rounded-corners-black-transparent">{{ stageStats.name }} - Stats</div>
+                <div class="table-caption rounded-corners-black-transparent">{{ stageStats.name }} - <img
+                  class="image-mini" [src]="model.game?.ruleIcon" alt="rule icon"/> {{ model.game?.rule }} Stats
+                </div>
                 <div class="table-row">
                   <div class="table-cell rounded-corners-black-transparent">
                     <div class="sub-table fill-width">
-                      <div class="table-caption underlined">Mode</div>
+                      <div class="table-caption underlined-transparent">Mode</div>
                       <div class="table-group">
                         <div class="table-row">
                           <div class="table-cell">
@@ -489,18 +495,18 @@
                             <div class="table-cell no-wrap">
                               {{ statKeyValue.win_defeat_rate.wins }}
                               @if (statKeyValue.win_defeat_rate.wins_gained) {
-                              <span class="mini-font"> (<span
-                                class="green">+ {{ statKeyValue.win_defeat_rate.wins_gained }}</span>)</span>
-                            }
+                                <span class="mini-font"> (<span
+                                  class="green">+{{ statKeyValue.win_defeat_rate.wins_gained }}</span>)</span>
+                              }
                             </div>
                           </div>
                           <div class="table-row">
                             <div class="table-cell no-wrap">
                               {{ statKeyValue.win_defeat_rate.defeats }}
                               @if (statKeyValue.win_defeat_rate.defeats_gained) {
-                              <span class="mini-font"> (<span
-                                class="green">+ {{ statKeyValue.win_defeat_rate.defeats_gained }}</span>)</span>
-                            }
+                                <span class="mini-font"> (<span
+                                  class="red">+{{ statKeyValue.win_defeat_rate.defeats_gained }}</span>)</span>
+                              }
                             </div>
                           </div>
                           <div class="table-row">
