@@ -165,7 +165,7 @@
                 <div class="table-caption rounded-corners-bright underlined">{{ model.weapon!.name }} - Stats</div>
                 <div class="table-row">
                   <div class="table-cell">
-                    <div class="sub-table fill-width">
+                    <div class="sub-table">
                       <div class="table-caption underlined">Mode</div>
                       <div class="table-group">
                         <div class="table-row">
@@ -188,7 +188,7 @@
                   </div>
                   @for (statKeyValue of model.weapon!.stats; track statKeyValue) {
                     <div class="table-cell rounded-corners-bright">
-                      <div class="sub-table fill-width">
+                      <div class="sub-table">
                         <div class="table-caption underlined no-wrap"> {{ statKeyValue.key }}</div>
                         <div class="table-group">
                           <div class="table-row">
@@ -465,7 +465,7 @@
                 </div>
                 <div class="table-row">
                   <div class="table-cell rounded-corners-black-transparent">
-                    <div class="sub-table fill-width">
+                    <div class="sub-table">
                       <div class="table-caption underlined-transparent">Mode</div>
                       <div class="table-group">
                         <div class="table-row">
@@ -488,7 +488,7 @@
                   </div>
                   @for (statKeyValue of stageStats.stats; track statKeyValue) {
                     <div class="table-cell rounded-corners-black-transparent">
-                      <div class="sub-table fill-width">
+                      <div class="sub-table">
                         <div class="table-caption underlined-transparent no-wrap"> {{ statKeyValue.key }}</div>
                         <div class="table-group">
                           <div class="table-row">
