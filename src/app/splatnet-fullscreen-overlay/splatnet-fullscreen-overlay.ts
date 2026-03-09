@@ -74,15 +74,18 @@ export class SplatnetFullscreenOverlay implements OnDestroy {
   //   general: {
   //     wins: 43,
   //     defeats: 17,
+  //     sub_weapon_image: "https://cdn.wikimg.net/en/splatoonwiki/images/c/c4/S3_Weapon_Sub_Fizzy_Bomb_Flat.png?20240404200150",
+  //     sub_weapon_games: 5000,
+  //     sub_weapon_wins: 2800,
   //     special_weapon_image: "https://cdn.wikimg.net/en/splatoonwiki/images/7/72/S3_Badge_Trizooka_1200.png?20220918134257",
   //     special_wins: 1200,
   //     special_wins_gained: undefined,
   //     anarchy_rank: "S+30",
   //     weapon_power: undefined,
-  //     x_zones: 2225.6,
-  //     x_tower: 1980.0,
+  //     x_zones: 2225.6456456,
+  //     x_tower: 1980.0567567,
   //     x_rain: undefined,
-  //     x_clams: 2500.9
+  //     x_clams: 2500.9345345345
   //   },
   //   weapon: {
   //     name: "Carbon Roller Deco",
@@ -190,151 +193,155 @@ export class SplatnetFullscreenOverlay implements OnDestroy {
   //   }
   //   ,
   //   game: {
-  //     teams:
-  //       [
-  //         {
-  //           result: 'WIN',
-  //           result_str: "56p",
-  //           color: "#c12d74",
-  //           players: [
-  //             {
-  //               name: "stroh",
-  //               is_myself: true,
-  //               weapon_image: "https://sendou.ink/static-assets/img/main-weapons/1001.avif",
-  //               special_weapon_image: "https://sendou.ink/static-assets/img/special-weapons/1.avif",
-  //               sub_weapon_image: "https://sendou.ink/static-assets/img/sub-weapons/2.avif",
-  //               head_main_image: "https://sendou.ink/static-assets/img/abilities/CB.avif",
-  //               shirt_main_image: "https://sendou.ink/static-assets/img/abilities/NS.avif",
-  //               shoes_main_image: "https://sendou.ink/static-assets/img/abilities/SJ.avif",
-  //               kills: 15,
-  //               assists: 5,
-  //               deaths: 12,
-  //               specials: 3,
-  //               paint: 1_000,
-  //               number_of_games: 0
-  //             },
-  //             {
-  //               name: "VA Tent",
-  //               is_myself: false,
-  //               weapon_image: "https://sendou.ink/static-assets/img/main-weapons/6020.avif",
-  //               special_weapon_image: "https://sendou.ink/static-assets/img/special-weapons/13.avif",
-  //               sub_weapon_image: "https://sendou.ink/static-assets/img/sub-weapons/10.avif",
-  //               head_main_image: "https://sendou.ink/static-assets/img/abilities/SCU.avif",
-  //               shirt_main_image: "https://sendou.ink/static-assets/img/abilities/SSU.avif",
-  //               shoes_main_image: "https://sendou.ink/static-assets/img/abilities/RSU.avif",
-  //               kills: 10,
-  //               assists: 3,
-  //               deaths: 7,
-  //               specials: 5,
-  //               paint: 1_500,
-  //               number_of_games: 4475
-  //             },
-  //             {
-  //               name: "Someone",
-  //               is_myself: false,
-  //               weapon_image: "https://sendou.ink/static-assets/img/main-weapons/2070.avif",
-  //               special_weapon_image: "https://sendou.ink/static-assets/img/special-weapons/15.avif",
-  //               sub_weapon_image: "https://sendou.ink/static-assets/img/sub-weapons/3.avif",
-  //               head_main_image: "https://sendou.ink/static-assets/img/abilities/SCU.avif",
-  //               shirt_main_image: "https://sendou.ink/static-assets/img/abilities/ISM.avif",
-  //               shoes_main_image: "https://sendou.ink/static-assets/img/abilities/ISM.avif",
-  //               kills: 6,
-  //               assists: 10,
-  //               deaths: 0,
-  //               specials: 8,
-  //               paint: 2_000,
-  //               number_of_games: 34
-  //             },
-  //             {
-  //               name: "Kiver",
-  //               is_myself: false,
-  //               weapon_image: "https://sendou.ink/static-assets/img/main-weapons/50.avif",
-  //               special_weapon_image: "https://sendou.ink/static-assets/img/special-weapons/9.avif",
-  //               sub_weapon_image: "https://sendou.ink/static-assets/img/sub-weapons/4.avif",
-  //               head_main_image: "https://sendou.ink/static-assets/img/abilities/SSU.avif",
-  //               shirt_main_image: "https://sendou.ink/static-assets/img/abilities/SSU.avif",
-  //               shoes_main_image: "https://sendou.ink/static-assets/img/abilities/SJ.avif",
-  //               kills: 9,
-  //               assists: 7,
-  //               deaths: 5,
-  //               specials: 3,
-  //               paint: 780,
-  //               number_of_games: 13
-  //             }
-  //           ]
-  //         },
-  //         {
-  //           result: "LOSE",
-  //           result_str: "44p",
-  //           color: "#2cb721",
-  //           players: [
-  //             {
-  //               name: "Opponent 1",
-  //               is_myself: false,
-  //               weapon_image: "https://sendou.ink/static-assets/img/main-weapons/4010.avif",
-  //               special_weapon_image: "https://sendou.ink/static-assets/img/special-weapons/7.avif",
-  //               sub_weapon_image: "https://sendou.ink/static-assets/img/sub-weapons/3.avif",
-  //               head_main_image: "https://sendou.ink/static-assets/img/abilities/RSU.avif",
-  //               shirt_main_image: "https://sendou.ink/static-assets/img/abilities/RSU.avif",
-  //               shoes_main_image: "https://sendou.ink/static-assets/img/abilities/OS.avif",
-  //               kills: 10,
-  //               assists: 2,
-  //               deaths: 8,
-  //               specials: 5,
-  //               paint: 1_750,
-  //               number_of_games: 1
-  //             },
-  //             {
-  //               name: "Opponent 2",
-  //               is_myself: false,
-  //               weapon_image: "https://sendou.ink/static-assets/img/main-weapons/3001.avif",
-  //               special_weapon_image: "https://sendou.ink/static-assets/img/special-weapons/3.avif",
-  //               sub_weapon_image: "https://sendou.ink/static-assets/img/sub-weapons/12.avif",
-  //               head_main_image: "https://sendou.ink/static-assets/img/abilities/CB.avif",
-  //               shirt_main_image: "https://sendou.ink/static-assets/img/abilities/QR.avif",
-  //               shoes_main_image: "https://sendou.ink/static-assets/img/abilities/SJ.avif",
-  //               kills: 3,
-  //               assists: 0,
-  //               deaths: 12,
-  //               specials: 1,
-  //               paint: 530,
-  //               number_of_games: 45
-  //             },
-  //             {
-  //               name: "Opponent 3",
-  //               is_myself: false,
-  //               weapon_image: "https://sendou.ink/static-assets/img/main-weapons/1110.avif",
-  //               special_weapon_image: "https://sendou.ink/static-assets/img/special-weapons/3.avif",
-  //               sub_weapon_image: "https://sendou.ink/static-assets/img/sub-weapons/1.avif",
-  //               head_main_image: "https://sendou.ink/static-assets/img/abilities/SSU.avif",
-  //               shirt_main_image: "https://sendou.ink/static-assets/img/abilities/NS.avif",
-  //               shoes_main_image: "https://sendou.ink/static-assets/img/abilities/DR.avif",
-  //               kills: 17,
-  //               assists: 4,
-  //               deaths: 8,
-  //               specials: 4,
-  //               paint: 1_200,
-  //               number_of_games: 435
-  //             },
-  //             {
-  //               name: "Opponent 4",
-  //               is_myself: false,
-  //               weapon_image: "https://sendou.ink/static-assets/img/main-weapons/8020.avif",
-  //               special_weapon_image: "https://sendou.ink/static-assets/img/special-weapons/2.avif",
-  //               sub_weapon_image: "https://sendou.ink/static-assets/img/sub-weapons/1.avif",
-  //               head_main_image: "https://sendou.ink/static-assets/img/abilities/CB.avif",
-  //               shirt_main_image: "https://sendou.ink/static-assets/img/abilities/SSU.avif",
-  //               shoes_main_image: "https://sendou.ink/static-assets/img/abilities/SJ.avif",
-  //               kills: 8,
-  //               assists: 8,
-  //               deaths: 6,
-  //               specials: 3,
-  //               paint: 1_178,
-  //               number_of_games: 78
-  //             }
-  //           ]
-  //         }
-  //       ]
+  //     teams: [
+  //       {
+  //         result: 'WIN',
+  //         result_str: "56p",
+  //         color: "#c12d74",
+  //         players: [
+  //           {
+  //             name: "stroh",
+  //             is_myself: true,
+  //             weapon_image: "https://sendou.ink/static-assets/img/main-weapons/1001.avif",
+  //             special_weapon_image: "https://sendou.ink/static-assets/img/special-weapons/1.avif",
+  //             sub_weapon_image: "https://sendou.ink/static-assets/img/sub-weapons/2.avif",
+  //             head_main_image: "https://sendou.ink/static-assets/img/abilities/CB.avif",
+  //             shirt_main_image: "https://sendou.ink/static-assets/img/abilities/NS.avif",
+  //             shoes_main_image: "https://sendou.ink/static-assets/img/abilities/SJ.avif",
+  //             kills: 15,
+  //             assists: 5,
+  //             deaths: 12,
+  //             specials: 3,
+  //             paint: 1000,
+  //             number_of_games: 0
+  //           },
+  //           {
+  //             name: "VA Tent",
+  //             is_myself: false,
+  //             weapon_image: "https://sendou.ink/static-assets/img/main-weapons/6020.avif",
+  //             special_weapon_image: "https://sendou.ink/static-assets/img/special-weapons/13.avif",
+  //             sub_weapon_image: "https://sendou.ink/static-assets/img/sub-weapons/10.avif",
+  //             head_main_image: "https://sendou.ink/static-assets/img/abilities/SCU.avif",
+  //             shirt_main_image: "https://sendou.ink/static-assets/img/abilities/SSU.avif",
+  //             shoes_main_image: "https://sendou.ink/static-assets/img/abilities/RSU.avif",
+  //             kills: 10,
+  //             assists: 3,
+  //             deaths: 7,
+  //             specials: 5,
+  //             paint: 1500,
+  //             number_of_games: 4475
+  //           },
+  //           {
+  //             name: "Someone",
+  //             is_myself: false,
+  //             weapon_image: "https://sendou.ink/static-assets/img/main-weapons/2070.avif",
+  //             special_weapon_image: "https://sendou.ink/static-assets/img/special-weapons/15.avif",
+  //             sub_weapon_image: "https://sendou.ink/static-assets/img/sub-weapons/3.avif",
+  //             head_main_image: "https://sendou.ink/static-assets/img/abilities/SCU.avif",
+  //             shirt_main_image: "https://sendou.ink/static-assets/img/abilities/ISM.avif",
+  //             shoes_main_image: "https://sendou.ink/static-assets/img/abilities/ISM.avif",
+  //             kills: 6,
+  //             assists: 10,
+  //             deaths: 0,
+  //             specials: 8,
+  //             paint: 2000,
+  //             number_of_games: 34
+  //           },
+  //           {
+  //             name: "Kiver",
+  //             is_myself: false,
+  //             weapon_image: "https://sendou.ink/static-assets/img/main-weapons/50.avif",
+  //             special_weapon_image: "https://sendou.ink/static-assets/img/special-weapons/9.avif",
+  //             sub_weapon_image: "https://sendou.ink/static-assets/img/sub-weapons/4.avif",
+  //             head_main_image: "https://sendou.ink/static-assets/img/abilities/SSU.avif",
+  //             shirt_main_image: "https://sendou.ink/static-assets/img/abilities/SSU.avif",
+  //             shoes_main_image: "https://sendou.ink/static-assets/img/abilities/SJ.avif",
+  //             kills: 9,
+  //             assists: 7,
+  //             deaths: 5,
+  //             specials: 3,
+  //             paint: 780,
+  //             number_of_games: 13
+  //           }
+  //         ]
+  //       },
+  //       {
+  //         result: "LOSE",
+  //         result_str: "44p",
+  //         color: "#2cb721",
+  //         players: [
+  //           {
+  //             name: "Opponent 1",
+  //             is_myself: false,
+  //             weapon_image: "https://sendou.ink/static-assets/img/main-weapons/4010.avif",
+  //             special_weapon_image: "https://sendou.ink/static-assets/img/special-weapons/7.avif",
+  //             sub_weapon_image: "https://sendou.ink/static-assets/img/sub-weapons/3.avif",
+  //             head_main_image: "https://sendou.ink/static-assets/img/abilities/RSU.avif",
+  //             shirt_main_image: "https://sendou.ink/static-assets/img/abilities/RSU.avif",
+  //             shoes_main_image: "https://sendou.ink/static-assets/img/abilities/OS.avif",
+  //             kills: 10,
+  //             assists: 2,
+  //             deaths: 8,
+  //             specials: 5,
+  //             paint: 1750,
+  //             number_of_games: 1
+  //           },
+  //           {
+  //             name: "Opponent 2",
+  //             is_myself: false,
+  //             weapon_image: "https://sendou.ink/static-assets/img/main-weapons/3001.avif",
+  //             special_weapon_image: "https://sendou.ink/static-assets/img/special-weapons/3.avif",
+  //             sub_weapon_image: "https://sendou.ink/static-assets/img/sub-weapons/12.avif",
+  //             head_main_image: "https://sendou.ink/static-assets/img/abilities/CB.avif",
+  //             shirt_main_image: "https://sendou.ink/static-assets/img/abilities/QR.avif",
+  //             shoes_main_image: "https://sendou.ink/static-assets/img/abilities/SJ.avif",
+  //             kills: 3,
+  //             assists: 0,
+  //             deaths: 12,
+  //             specials: 1,
+  //             paint: 530,
+  //             number_of_games: 45
+  //           },
+  //           {
+  //             name: "Opponent 3",
+  //             is_myself: false,
+  //             weapon_image: "https://sendou.ink/static-assets/img/main-weapons/1110.avif",
+  //             special_weapon_image: "https://sendou.ink/static-assets/img/special-weapons/3.avif",
+  //             sub_weapon_image: "https://sendou.ink/static-assets/img/sub-weapons/1.avif",
+  //             head_main_image: "https://sendou.ink/static-assets/img/abilities/SSU.avif",
+  //             shirt_main_image: "https://sendou.ink/static-assets/img/abilities/NS.avif",
+  //             shoes_main_image: "https://sendou.ink/static-assets/img/abilities/DR.avif",
+  //             kills: 17,
+  //             assists: 4,
+  //             deaths: 8,
+  //             specials: 4,
+  //             paint: 1200,
+  //             number_of_games: 435
+  //           },
+  //           {
+  //             name: "Opponent 4",
+  //             is_myself: false,
+  //             weapon_image: "https://sendou.ink/static-assets/img/main-weapons/8020.avif",
+  //             special_weapon_image: "https://sendou.ink/static-assets/img/special-weapons/2.avif",
+  //             sub_weapon_image: "https://sendou.ink/static-assets/img/sub-weapons/1.avif",
+  //             head_main_image: "https://sendou.ink/static-assets/img/abilities/CB.avif",
+  //             shirt_main_image: "https://sendou.ink/static-assets/img/abilities/SSU.avif",
+  //             shoes_main_image: "https://sendou.ink/static-assets/img/abilities/SJ.avif",
+  //             kills: 8,
+  //             assists: 8,
+  //             deaths: 6,
+  //             specials: 3,
+  //             paint: 1178,
+  //             number_of_games: 78
+  //           }
+  //         ]
+  //       }
+  //     ],
+  //     mode: "Anarchy Open",
+  //     modeIcon: "https://cdn.wikimg.net/en/splatoonwiki/images/2/27/S3_Badge_Rank_A.png?20220918134223",
+  //     rule: "Rainmaker",
+  //     ruleIcon: "https://cdn.wikimg.net/en/splatoonwiki/images/3/33/S3_Badge_Rainmaker_1000.png?20220918134222",
+  //     stage: "Brinewater Springs"
   //   }
   //   ,
   //   map_stats: [

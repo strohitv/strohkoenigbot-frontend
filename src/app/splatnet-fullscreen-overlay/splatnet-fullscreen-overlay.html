@@ -229,6 +229,10 @@
                     <p class="green">{{ model.general!.wins }} w</p>
                   </div>
                   <div class="table-cell">
+                    <p><img class="image-mini" [src]="model.general!.sub_weapon_image"
+                            alt="sub weapon"/> {{ model.general!.sub_weapon_games }} g</p>
+                  </div>
+                  <div class="table-cell">
                     <p><img class="image-mini" [src]="model.general!.special_weapon_image"
                             alt="special weapon"/> {{ model.general!.special_wins }}</p>
                   </div>
@@ -256,6 +260,9 @@
                     <p class="red">{{ model.general!.defeats }} d</p>
                   </div>
                   <div class="table-cell">
+                    <p>{{ model.general!.sub_weapon_wins }} w</p>
+                  </div>
+                  <div class="table-cell">
                     @if (model.general!.special_wins_gained) {
                       <p>(<span class="green">+{{ model.general!.special_wins_gained }}</span>)</p>
                     } @else {
@@ -266,19 +273,19 @@
                     <p>{{ model.general!.anarchy_rank }}</p>
                   </div>
                   <div class="table-cell">
-                    <p>{{ model.general!.weapon_power || '-' }}</p>
+                    <p>{{ (model.general!.weapon_power | number: '1.1-1') || '-' }}</p>
                   </div>
                   <div class="table-cell">
-                    <p>{{ model.general!.x_zones || '-' }}</p>
+                    <p>{{ (model.general!.x_zones | number: '1.1-1') || '-' }}</p>
                   </div>
                   <div class="table-cell">
-                    <p>{{ model.general!.x_tower || '-' }}</p>
+                    <p>{{ (model.general!.x_tower | number: '1.1-1') || '-' }}</p>
                   </div>
                   <div class="table-cell">
-                    <p>{{ model.general!.x_rain || '-' }}</p>
+                    <p>{{ (model.general!.x_rain | number: '1.1-1') || '-' }}</p>
                   </div>
                   <div class="table-cell">
-                    <p>{{ model.general!.x_clams || '-' }}</p>
+                    <p>{{ (model.general!.x_clams | number: '1.1-1') || '-' }}</p>
                   </div>
                 </div>
               </div>
