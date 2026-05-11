@@ -23,11 +23,17 @@ export class SendouOverlay implements OnDestroy {
 
   private sendouUser: string;
   private tournamentId: string;
+  private enableSendouQ: boolean;
 
   constructor(private cdr: ChangeDetectorRef, private route: ActivatedRoute, private http: HttpClient) {
     this.route.queryParams.subscribe(params => {
       this.sendouUser = params['user'] ?? 'strohkoenig';
       this.tournamentId = params['toid'] ?? '2978';
+      this.enableSendouQ = params['sq']
+        ? params['sq'].toLowerCase() === 'true'
+        : false;
+
+      console.log(this.enableSendouQ);
 
       if (params['url']) {
         if (params['url'].toUpperCase() === 'NONE') {
@@ -68,6 +74,6 @@ export class SendouOverlay implements OnDestroy {
   }
 
   private createGetRequestLink(): string {
-    return `/api/v1/sendou/match/search?tournament_id=${this.tournamentId}&user=${this.sendouUser}`;
+    return `/api/v1/sendou/match/search?tournament_id=${this.tournamentId}&user=${this.sendouUser}&sq=${this.enableSendouQ ? 'true' : 'false'}`;
   }
 }
