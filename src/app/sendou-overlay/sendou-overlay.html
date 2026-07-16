@@ -1,3 +1,16 @@
+<div
+  class="body alert bottom-margin rounded-corners-all"
+  [hidden]="!outdatedUrl">
+  <p>You are still using an outdated URL. The <span class="underlined">toid</span> and <span class="underlined">sq</span>
+    parameters got removed and are not necessary anymore.</p>
+  <p>Please switch to the following URL:
+    <a class="yellow"
+       href="https://bot.stroh.ink/frontend/sendou?user={{sendouUser}}&url={{this.matchUrlMode.toLowerCase()}}">
+      https://bot.stroh.ink/frontend/sendou?user={{ sendouUser }}&url={{ this.matchUrlMode.toLowerCase() }}
+    </a>
+  </p>
+</div>
+
 <div class="sendou-overlay body" [hidden]="model.type === 'NONE'">
   <div class="sendou-header micro-font">
     &copy; Overlay: strohkoenig

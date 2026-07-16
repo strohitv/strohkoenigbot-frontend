@@ -49,6 +49,16 @@ qrcode {
   max-width: max-content;
 }
 
+.alert {
+  background-color: rgb(192, 128, 128);
+  border-radius: 0.65rem;
+  padding: 0.33rem 0.2rem;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
 .rounded-corners-sendou-foreground {
   background-color: rgba(2, 1, 30, 0.8);
   border-radius: 0 0.65rem 0.65rem 0;
@@ -170,6 +180,10 @@ qrcode {
 
 .text-left {
   text-align: left;
+}
+
+.rounded-corners-all {
+  border-radius: 0.65rem;
 }
 
 .rounded-corners-up-left {

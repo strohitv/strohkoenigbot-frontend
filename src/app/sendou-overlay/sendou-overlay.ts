@@ -17,23 +17,17 @@ export class SendouOverlay implements OnDestroy {
   protected emptyTeamImageUrl: string = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=)'
 
   protected model: TournamentMatch = new TournamentMatch();
+
+  protected sendouUser: string;
   protected matchUrlMode: 'NONE' | 'QR' | 'URL' | 'BOTH' = 'QR';
 
   private subscription: Subscription;
 
-  private sendouUser: string;
-  private tournamentId: string;
-  private enableSendouQ: boolean;
+  protected outdatedUrl: boolean;
 
   constructor(private cdr: ChangeDetectorRef, private route: ActivatedRoute, private http: HttpClient) {
     this.route.queryParams.subscribe(params => {
       this.sendouUser = params['user'] ?? 'strohkoenig';
-      this.tournamentId = params['toid'] ?? '2978';
-      this.enableSendouQ = params['sq']
-        ? params['sq'].toLowerCase() === 'true'
-        : false;
-
-      console.log(this.enableSendouQ);
 
       if (params['url']) {
         if (params['url'].toUpperCase() === 'NONE') {
@@ -46,6 +40,10 @@ export class SendouOverlay implements OnDestroy {
           console.log(params['url']);
           this.matchUrlMode = 'BOTH';
         }
+      }
+
+      if (params['toid'] || params['sq']) {
+        this.outdatedUrl = true
       }
     });
 
@@ -74,6 +72,6 @@ export class SendouOverlay implements OnDestroy {
   }
 
   private createGetRequestLink(): string {
-    return `/api/v1/sendou/match/search?tournament_id=${this.tournamentId}&user=${this.sendouUser}&sq=${this.enableSendouQ ? 'true' : 'false'}`;
+    return `/api/v1/sendou/match/search?user=${this.sendouUser}`;
   }
 }
